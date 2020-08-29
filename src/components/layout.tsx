@@ -1,6 +1,7 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import "./layout.css"
+import { Link } from "gatsby"
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -13,10 +14,23 @@ const LayoutWrapper = ({ children }) => {
           flexDirection: "column",
           justifyContent: "space-between",
           background: "white",
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `0 32px 1.45rem`,
           minHeight: "100vh",
         }}
       >
+        <nav>
+          <ul
+            style={{ display: "flex", flexDirection: "row", listStyle: "none" }}
+          >
+            <li>
+              <Link to="/about-me">About me</Link>
+            </li>
+            <li>
+              <Link to="/experience">Experience</Link>
+            </li>
+            <li>Gallery</li>
+          </ul>
+        </nav>
         <AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
         <footer style={{ textAlign: "center" }}>
           Built with{" "}

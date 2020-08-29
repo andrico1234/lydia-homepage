@@ -15,11 +15,10 @@ export function AboutMeHeading() {
       }}
     >
       <motion.div
-        key="main-header"
         layout
         style={{ flex: 1, position: "relative" }}
         initial={{ x: 100 }}
-        animate={{ x: "-180px" }}
+        animate={{ x: "-166px" }}
         transition={{ ease: "easeInOut", delay: 0.8, duration: 1 }}
       >
         <Link
@@ -38,13 +37,13 @@ export function AboutMeHeading() {
             }}
           >
             <motion.h1
-              layout
+              // layout
               initial={{ fontSize: "80px" }}
               animate={{ fontSize: "40px" }}
               transition={{ duration: 0.8 }}
-              style={{ fontSize: "80px", margin: 0 }}
+              style={{ fontSize: "80px", margin: 0, fontWeight: "lighter" }}
             >
-              Lydia Mackenzie
+              LYDIA MACKENZIE
             </motion.h1>
             <motion.span
               initial={{
@@ -67,7 +66,12 @@ export function AboutMeHeading() {
       </motion.div>
       <motion.h1
         key="about-header"
-        style={{ fontSize: "40px", margin: 0, width: "200px" }}
+        style={{
+          fontSize: "40px",
+          margin: 0,
+          width: "200px",
+          textAlign: "right",
+        }}
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,

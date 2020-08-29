@@ -19,17 +19,17 @@ export function SplitText() {
     }, 1600)
   }, [])
 
-  useEffect(() => {
-    scrollYProgress.onChange(progress => {
-      if (progress >= 0.25 && !hasPassedLimit) {
-        return setPassedLimitState(true)
-      }
+  // useEffect(() => {
+  //   scrollYProgress.onChange(progress => {
+  //     if (progress >= 0.25 && !hasPassedLimit) {
+  //       return setPassedLimitState(true)
+  //     }
 
-      if (progress < 0.25 && hasPassedLimit) {
-        return setPassedLimitState(false)
-      }
-    })
-  })
+  //     if (progress < 0.25 && hasPassedLimit) {
+  //       return setPassedLimitState(false)
+  //     }
+  //   })
+  // })
 
   return (
     <AnimatePresence exitBeforeEnter>

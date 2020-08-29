@@ -5,10 +5,11 @@ import { useInView } from "react-intersection-observer"
 interface Props {
   src: string
   description: string
+  onClick?: () => void
 }
 
 export function ExperienceImage(props: Props) {
-  const { src, description } = props
+  const { src, description, onClick } = props
   const [ref, inView] = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -16,11 +17,16 @@ export function ExperienceImage(props: Props) {
 
   return (
     <div
-      style={{ height: "280px", width: "300px", transform: "scale(1)" }}
+      style={{ height: "200px", width: "250px", transform: "scale(1)" }}
       ref={ref}
     >
       {inView && (
         <motion.div
+          onTap={() => {
+            if (onClick) {
+              onClick()
+            }
+          }}
           className="ExperienceImage"
           initial={{ y: 20, opacity: 0 }}
           animate={{
@@ -33,12 +39,11 @@ export function ExperienceImage(props: Props) {
           }}
           transition={{ duration: 0.3 }}
           style={{
-            width: "300px",
-            height: "200px",
+            width: "250px",
             background: "white",
           }}
         >
-          <img src={src} style={{ margin: 0 }} />
+          <img src={src} style={{ margin: 0, maxWidth: "100%" }} />
           <motion.p
             style={{
               display: "flex",

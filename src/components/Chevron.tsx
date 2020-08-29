@@ -9,7 +9,7 @@ export function Chevron() {
         animate={{
           opacity: 1,
           y: 0,
-          transition: { duration: 0.4, delay: 2 },
+          transition: { duration: 0.4, delay: 1 },
         }}
         width={36}
         viewBox="0 0 407.437 407.437"
