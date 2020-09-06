@@ -4,7 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import 'typeface-lora';
+import "./src/styles/layout.css"
 
 export const onClientEntry = async () => {
   if (typeof IntersectionObserver === `undefined`) {
@@ -16,7 +17,6 @@ export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
-  console.log(location, getSavedScrollPosition, location.action)
   if (location.action === "PUSH") {
     window.setTimeout(() => window.scrollTo(0, 0), 500)
   } else {

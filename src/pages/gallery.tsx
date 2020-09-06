@@ -1,11 +1,11 @@
 import React from "react"
 import SEO from "../components/seo"
-import imgTwoSrc from "../images/contemp-two.png"
 import { AboutMe } from "../components/AboutMe"
+import imgThreeSrc from "../images/ballet-three.png"
 import { PageLayout } from "../components/layouts/PageLayout"
 
 const AboutMePage = () => (
-  <PageLayout imgSrc={imgTwoSrc}>
+  <PageLayout imgSrc={imgThreeSrc}>
     <SEO title="Experience" />
     <AboutMe />
   </PageLayout>

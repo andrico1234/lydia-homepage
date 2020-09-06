@@ -1,0 +1,18 @@
+.LinkButton {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border: 0;
+  border-radius: 2px;
+  background-color: #ffb1bb;
+  font-size: 20px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  box-shadow: 0px 1px 3px -1px black;
+}
+
+.LinkButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 3px 3px -2px black;
+}

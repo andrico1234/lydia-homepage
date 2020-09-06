@@ -1,0 +1,33 @@
+.NavigationLinks {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  text-transform: capitalize;
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.text:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: " ";
+  border: 1px solid black;
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.text_active:before {
+  width: 100%;
+  opacity: 1;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  min-width: 160px;
+}

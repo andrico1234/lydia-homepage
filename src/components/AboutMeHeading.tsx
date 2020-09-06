@@ -43,7 +43,7 @@ export function AboutMeHeading() {
               transition={{ duration: 0.8 }}
               style={{ fontSize: "80px", margin: 0, fontWeight: "lighter" }}
             >
-              LYDIA MACKENZIE
+              Lydia Mackenzie
             </motion.h1>
             <motion.span
               initial={{
@@ -68,6 +68,7 @@ export function AboutMeHeading() {
         key="about-header"
         style={{
           fontSize: "40px",
+          fontWeight: "lighter",
           margin: 0,
           width: "200px",
           textAlign: "right",
@@ -75,10 +76,10 @@ export function AboutMeHeading() {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.8, delay: 0.8 },
+          transition: { duration: 0.8, delay: 2 },
         }}
       >
-        About Me
+        About
       </motion.h1>
     </header>
   )

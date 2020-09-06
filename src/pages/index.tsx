@@ -1,21 +1,23 @@
 import React from "react"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FadeInHeading } from "../components/FadeInHeading"
-import { MainPicture } from "../components/MainPicture"
-import { Experience } from "../components/Experience"
+import { Hero } from "../components/Home/Hero"
 import { Chevron } from "../components/Chevron"
-import { Strapline } from "../components/Strapline"
+import { ExperienceTwo } from "../components/ExperienceTwo"
+import { HomeLayout } from "../components/layouts/HomeLayout"
+import { UpcomingProject } from "../components/UpcomingProject"
 
 const IndexPage = () => (
-  <Layout>
+  <HomeLayout>
     <SEO title="Home" />
     <FadeInHeading />
-    <MainPicture />
-    <Strapline />
+    <Hero />
+    {/* <Strapline /> */}
     <Chevron />
-    <Experience />
-  </Layout>
+    <ExperienceTwo />
+    {/* <Experience /> */}
+    {/* link to instagram, get in touch */}
+  </HomeLayout>
 )
 
 export default IndexPage
