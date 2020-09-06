@@ -1,14 +1,15 @@
 import React from "react"
 import { motion, Variants } from "framer-motion"
-import bioData from "../data/bio"
+import bioData from "../../data/bio"
 
 const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      delay: 2,
-      duration: 0.4,
+      delay: 0.8,
+      ease: "easeOut",
+      duration: 0.8,
     },
   },
   hidden: {

@@ -18,15 +18,7 @@ export function AboutMePicture(props: Props) {
         overflow: "hidden",
       }}
     >
-      <motion.img
-        initial={{ scale: 1.1 }}
-        style={{ margin: 0, width: "100%" }}
-        animate={{
-          scale: 1.0,
-          transition: { duration: 1.2, ease: "easeInOut" },
-        }}
-        src={imgSrc}
-      />
+      <motion.img style={{ margin: 0, width: "100%" }} src={imgSrc} />
     </motion.div>
   )
 }

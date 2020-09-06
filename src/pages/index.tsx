@@ -9,7 +9,6 @@ import { UpcomingProject } from "../components/UpcomingProject"
 
 const IndexPage = () => (
   <HomeLayout>
-    <SEO title="Home" />
     <FadeInHeading />
     <Hero />
     {/* <Strapline /> */}

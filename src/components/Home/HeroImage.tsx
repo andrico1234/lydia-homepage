@@ -51,7 +51,7 @@ export function HeroImage(props: Props) {
             whileHover={{
               scale: 1.1,
             }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             width="100%"
             key={currentImage}
             src={currentImage}

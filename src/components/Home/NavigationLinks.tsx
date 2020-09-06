@@ -14,7 +14,11 @@ export function NavigationLinks(props: Props) {
   const { activeId, links, onClickLink, isFadingOut } = props
   return (
     <AnimatePresence>
-      <div style={{ height: "30px" }}>
+      <div
+        style={{
+          height: "30px",
+        }}
+      >
         {!isFadingOut && (
           <motion.div className={styles.NavigationLinks}>
             {links.map(link => {

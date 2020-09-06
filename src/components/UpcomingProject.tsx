@@ -27,7 +27,14 @@ export function UpcomingProject() {
 
   return (
     <div style={{ textAlign: "center", padding: "16px 0" }}>
-      <h3 style={{ textAlign: "center", padding: "16px 0", margin: 0 }}>
+      <h3
+        style={{
+          textAlign: "center",
+          padding: "16px 0",
+          margin: 0,
+          fontSize: "min(5vw, 32px)",
+        }}
+      >
         Need a{" "}
         <AnimatePresence initial={false} exitBeforeEnter>
           <motion.span
@@ -41,7 +48,8 @@ export function UpcomingProject() {
               cursor: "pointer",
               textDecoration: "underline",
               display: "inline-block",
-              width: "200px",
+              width: "50%",
+              maxWidth: "240px",
               textAlign: "center",
               padding: "16px 0",
             }}

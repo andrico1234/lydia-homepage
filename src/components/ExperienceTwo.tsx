@@ -5,7 +5,9 @@ import { AnimatePresence, motion } from "framer-motion"
 
 export function ExperienceTwo() {
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+    >
       <ExperienceBlock title="Dance Artist" imgSrc={BalletTwo} />
       <ExperienceBlock title="Teacher" reverse imgSrc={BalletTwo} />
       <ExperienceBlock title="Choreographer" imgSrc={BalletTwo} />
@@ -22,38 +24,31 @@ interface ExperienceBlockProps {
 function ExperienceBlock(props: ExperienceBlockProps) {
   const { title, reverse, imgSrc } = props
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: 0.8,
     triggerOnce: true,
   })
 
   return (
-    <div ref={ref} style={{ height: "350px" }}>
+    <div
+      ref={ref}
+      style={{ height: "350px", flex: "1 0 370px", padding: "16px", maxWidth: '420px' }}
+    >
       <AnimatePresence>
         {inView && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
-            style={{
-              display: "flex",
-              flexDirection: reverse ? "row-reverse" : "row",
-              padding: "32px 0",
-            }}
           >
             <h2
               style={{
-                flex: "1 1 150px",
                 alignItems: "center",
-                fontSize: "32px",
-                display: "flex",
-                justifyContent: reverse ? "flex-end" : "flex-start",
+                fontSize: "28px",
               }}
             >
               {title}
             </h2>
             <div
               style={{
-                flex: "1 1 150px",
-                display: "flex",
                 alignItems: "center",
               }}
             >
