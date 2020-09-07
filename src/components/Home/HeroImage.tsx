@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import imgOneSrc from "../../images/lydia.png"
-import imgTwoSrc from "../../images/contemp-two.png"
-import imgThreeSrc from "../../images/ballet-three.png"
+import imgTwoSrc from "../../images/lydia-two.png"
+import imgThreeSrc from "../../images/lydia-three.png"
 import styles from "./HeroImage.module.css"
 
 const images = [imgOneSrc, imgTwoSrc, imgThreeSrc]
@@ -51,7 +51,7 @@ export function HeroImage(props: Props) {
             whileHover={{
               scale: 1.1,
             }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             width="100%"
             key={currentImage}
             src={currentImage}
