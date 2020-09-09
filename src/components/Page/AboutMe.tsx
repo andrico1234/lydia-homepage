@@ -1,21 +1,7 @@
 import React from "react"
-import { motion, Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import bioData from "../../data/bio"
-
-const containerVariants: Variants = {
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      delay: 0.8,
-      ease: "easeOut",
-      duration: 0.8,
-    },
-  },
-  hidden: {
-    opacity: 0,
-  },
-}
+import { containerVariants } from '../../animations/variants';
 
 export function AboutMe() {
   return (

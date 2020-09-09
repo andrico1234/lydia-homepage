@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { LinkButton } from "./Button"
 import useCycle from "../hooks/useCycle"
 import { AnimatePresence, motion } from "framer-motion"
@@ -23,7 +23,7 @@ const variants = {
 }
 
 export function UpcomingProject() {
-  const { currentValue, setNextValue } = useCycle(titles)
+  const { currentValue, setNextValue } = useCycle(titles, 0)
 
   return (
     <div style={{ textAlign: "center", padding: "16px 0" }}>
@@ -61,7 +61,7 @@ export function UpcomingProject() {
         for an upcoming project?
       </h3>
       <LinkButton
-        to="mailto://ljmackenzie@hotmail.co.uk"
+        to="mailto://ljMacKenzie@hotmail.co.uk"
         title="Please get in touch"
       />
     </div>

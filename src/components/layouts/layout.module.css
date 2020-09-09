@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: white;
-  padding: 0 32px 1.45rem;
+  padding: 0 24px 1.45rem;
   min-height: 100vh;
 }
 
@@ -14,3 +14,9 @@
   background-color: #ffb1bb;
 }
 
+
+@media (min-width: 600px) {
+  .Layout {
+    padding: 0 32px 1.45rem;
+  }
+}

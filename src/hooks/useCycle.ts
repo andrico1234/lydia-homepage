@@ -1,7 +1,9 @@
 import { useState } from "react"
 
-function useCycle<T>(vals: T[]) {
-  const [indexOfCurrentValue, setIndexOfCurrentValue] = useState(0)
+function useCycle<T>(vals: T[], defaultPosition: number) {
+  const [indexOfCurrentValue, setIndexOfCurrentValue] = useState(
+    defaultPosition
+  )
   const totalItems = vals.length
 
   const currentValue = vals[indexOfCurrentValue]
@@ -19,8 +21,6 @@ function useCycle<T>(vals: T[]) {
   }
 
   function setValue(index: number) {
-    console.log(index)
-
     setIndexOfCurrentValue(index)
   }
 

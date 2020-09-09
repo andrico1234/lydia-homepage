@@ -1,5 +1,7 @@
 import React from "react"
-import BalletTwo from "../images/ballet-two.png"
+import { ChoreographerImage } from "./images/ChoregrapherImage"
+import { DanceArtistImage } from "./images/DanceArtistImage"
+import { TeacherImage } from "./images/TeacherImage"
 import { useInView } from "react-intersection-observer"
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -8,21 +10,20 @@ export function ExperienceTwo() {
     <div
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
     >
-      <ExperienceBlock title="Dance Artist" imgSrc={BalletTwo} />
-      <ExperienceBlock title="Teacher" reverse imgSrc={BalletTwo} />
-      <ExperienceBlock title="Choreographer" imgSrc={BalletTwo} />
+      <ExperienceBlock title="Dance Artist" img={<DanceArtistImage />} />
+      <ExperienceBlock title="Teacher" img={<TeacherImage />} />
+      <ExperienceBlock title="Choreographer" img={<ChoreographerImage />} />
     </div>
   )
 }
 
 interface ExperienceBlockProps {
   title: string
-  reverse?: boolean
-  imgSrc: string
+  img: React.ReactNode
 }
 
 function ExperienceBlock(props: ExperienceBlockProps) {
-  const { title, reverse, imgSrc } = props
+  const { title, img } = props
   const [ref, inView] = useInView({
     threshold: 0.8,
     triggerOnce: true,
@@ -31,7 +32,12 @@ function ExperienceBlock(props: ExperienceBlockProps) {
   return (
     <div
       ref={ref}
-      style={{ height: "350px", flex: "1 0 370px", padding: "16px", maxWidth: '420px' }}
+      style={{
+        height: "350px",
+        flex: "1 0 370px",
+        padding: "16px",
+        maxWidth: "420px",
+      }}
     >
       <AnimatePresence>
         {inView && (
@@ -47,13 +53,7 @@ function ExperienceBlock(props: ExperienceBlockProps) {
             >
               {title}
             </h2>
-            <div
-              style={{
-                alignItems: "center",
-              }}
-            >
-              <img width="100%" src={imgSrc} />
-            </div>
+            {img}
           </motion.div>
         )}
       </AnimatePresence>

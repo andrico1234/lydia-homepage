@@ -48,8 +48,7 @@ const bio = [
       <p>
         In addition to performing Lydia has been teaching dance and fitness at
         studios and schools across London and offers private tuition upon
-        request. For more information on her classes please{" "}
-        <a href="mailto://ljmackenzie@hotmail.co.uk">email Lydia</a>.
+        request.
       </p>
     ),
     id: "contact",

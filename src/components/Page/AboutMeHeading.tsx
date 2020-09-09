@@ -29,28 +29,29 @@ export function AboutMeHeading(props: Props) {
           layout
           style={{
             position: "relative",
-            width: "fit-content",
+            minWidth: "300px",
             margin: "0 auto",
           }}
         >
           <motion.h1
             layout
-            initial={{ fontSize: "min(10vw, 74px)" }}
-            animate={{ fontSize: "min(10vw, 40px)" }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            initial={{ fontSize: "min(9vw, 74px)" }}
+            animate={{ fontSize: "min(9vw, 37px)" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
               margin: 0,
               fontWeight: "lighter",
+              whiteSpace: "nowrap",
             }}
           >
-            Lydia Mackenzie
+            Lydia MacKenzie
           </motion.h1>
           <motion.span
             initial={{
               width: "0",
             }}
             animate={{
-              width: "306px",
+              width: "100%",
               transition: { delay: 1.6, duration: 0.4, ease: "easeOut" },
             }}
             style={{

@@ -7,8 +7,8 @@ import useCycle from "../../hooks/useCycle"
 const links: string[] = ["about", "experience", "gallery"]
 
 export function Hero() {
-  const [activeId, setActiveId] = useState(links[0])
-  const { currentValue, setNextValue, setValue } = useCycle(links)
+  const [activeId, setActiveId] = useState(links[2])
+  const { currentValue, setNextValue, setValue } = useCycle(links, 2)
   const [isExiting, setExitingState] = useState(false)
 
   useEffect(() => {

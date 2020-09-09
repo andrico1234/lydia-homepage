@@ -12,8 +12,7 @@ export function AboutMePicture(props: Props) {
     <motion.div
       style={{
         textAlign: "center",
-        height: "400px",
-        width: "100%",
+        maxWidth: "500px",
         margin: "24px auto",
         overflow: "hidden",
       }}

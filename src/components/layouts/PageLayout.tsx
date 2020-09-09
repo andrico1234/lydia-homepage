@@ -8,8 +8,6 @@ import { SocialIcons } from "../SocialIcons"
 import { Footer } from "../Footer"
 import SEO from "../seo"
 
-console.log("styles", styles)
-
 interface Props {
   imgSrc: string
   children: React.ReactNode

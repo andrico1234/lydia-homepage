@@ -11,10 +11,9 @@ const IndexPage = () => (
   <HomeLayout>
     <FadeInHeading />
     <Hero />
-    {/* <Strapline /> */}
     <Chevron />
     <ExperienceTwo />
-    {/* <Experience /> */}
+
     {/* link to instagram, get in touch */}
   </HomeLayout>
 )
