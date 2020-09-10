@@ -1,8 +1,10 @@
-import React, { useMemo } from "react"
+import React, { useMemo, useState } from "react"
 import { motion } from "framer-motion"
 import { containerVariants } from "../../animations/variants"
 import Img, { FluidObject } from "gatsby-image"
 import useWindow from "../../hooks/useWindow"
+import { useInView } from "react-intersection-observer"
+import { Modal } from "../Modal"
 
 interface Image {
   thumbnail: FluidObject
@@ -43,7 +45,9 @@ function generateImageColumns(images: Image[], columnCount: number): Image[][] {
 
 export function Gallery(props: Props) {
   const { width } = useWindow()
+  const [selectedImage, setSelectedImage] = useState(-1)
   const { images } = props
+  const imageList = useMemo(() => images.map(({ full }) => full.src), [images])
 
   const galleryColumns = getGalleryColumns(width)
 
@@ -52,15 +56,34 @@ export function Gallery(props: Props) {
     [images, galleryColumns]
   )
 
-  return <ImageGallery imageColumns={imageColumns} />
+  return (
+    <>
+      <Modal
+        selectedImage={images[selectedImage]?.full ?? null}
+        closeModal={() => setSelectedImage(null)}
+      />
+      <ImageGallery
+        imageList={imageList}
+        imageColumns={imageColumns}
+        openModal={setSelectedImage}
+      />
+    </>
+  )
 }
 
 interface GalleryProps {
   imageColumns: Image[][]
+  imageList: string[]
+  openModal: (index: number) => void
 }
 
 function ImageGallery(props: GalleryProps) {
-  console.log('props.imageColumns', props.imageColumns);
+  function openModal(src: string) {
+    const indexOfModal = props.imageList.indexOf(src)
+
+    props.openModal(indexOfModal)
+  }
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {props.imageColumns.map((col, i) => {
@@ -74,21 +97,55 @@ function ImageGallery(props: GalleryProps) {
               flexBasis: "300px",
             }}
           >
-            {col.map(image => {
+            {col.map((image, j) => {
               return (
-                <div
-                  style={{
-                    flexBasis: "300px",
-                    margin: "24px 16px",
-                  }}
-                >
-                  <Img imgStyle={{ width: "100%" }} fluid={image.thumbnail} />
-                </div>
+                <Image
+                  key={j}
+                  thumbnail={image.thumbnail}
+                  column={i}
+                  openModal={() => openModal(image.full.src)}
+                />
               )
             })}
           </motion.div>
         )
       })}
     </div>
+  )
+}
+
+interface ImageProps {
+  thumbnail: FluidObject
+  column: number
+  openModal: () => void
+}
+
+function Image(props: ImageProps) {
+  const threshold = 0.5 + 0.15 * props.column
+
+  const [ref, inView] = useInView({
+    threshold,
+    triggerOnce: true,
+  })
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      ref={ref}
+      onClick={props.openModal}
+      style={{
+        margin: "24px 16px",
+      }}
+    >
+      <Img
+        imgStyle={{
+          width: "100%",
+          opacity: inView ? 1 : 0,
+          cursor: "pointer",
+          transition: "opacity 0.3s ease-out",
+        }}
+        fluid={props.thumbnail}
+      />
+    </motion.div>
   )
 }

@@ -34,7 +34,7 @@ function ExperienceBlock(props: ExperienceBlockProps) {
       ref={ref}
       style={{
         height: "350px",
-        flex: "1 0 370px",
+        flex: "1 0 335px",
         padding: "16px",
         maxWidth: "420px",
       }}

@@ -45,6 +45,7 @@ export function UpcomingProject() {
             transition={{ duration: 0.25 }}
             key={currentValue}
             style={{
+              userSelect: 'none',
               cursor: "pointer",
               textDecoration: "underline",
               display: "inline-block",
@@ -61,7 +62,7 @@ export function UpcomingProject() {
         for an upcoming project?
       </h3>
       <LinkButton
-        to="mailto://ljMacKenzie@hotmail.co.uk"
+        to="mailto:ljMacKenzie@hotmail.co.uk"
         title="Please get in touch"
       />
     </div>

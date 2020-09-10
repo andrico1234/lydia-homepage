@@ -10,7 +10,7 @@ export function FadeInHeading() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        style={{ fontSize: "min(9vw, 74px)", margin: 0, fontWeight: 400 }}
+        style={{ fontSize: "min(10vw, 74px)", margin: 0, fontWeight: 400 }}
       >
         Lydia MacKenzie
       </motion.h1>

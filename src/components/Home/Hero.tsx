@@ -4,11 +4,12 @@ import { HeroImage } from "./HeroImage"
 import { navigate } from "gatsby"
 import useCycle from "../../hooks/useCycle"
 
-const links: string[] = ["about", "experience", "gallery"]
+const links: string[] = ["about", "gallery", "experience"]
 
 export function Hero() {
-  const [activeId, setActiveId] = useState(links[2])
-  const { currentValue, setNextValue, setValue } = useCycle(links, 2)
+  const initialId = links.indexOf("gallery")
+  const [activeId, setActiveId] = useState(links[initialId])
+  const { currentValue, setNextValue, setValue } = useCycle(links, initialId)
   const [isExiting, setExitingState] = useState(false)
 
   useEffect(() => {
@@ -33,8 +34,6 @@ export function Hero() {
       navigate(`/${id}`)
     }, 500)
   }
-
-  console.log("activeId", activeId, currentValue)
 
   return (
     <>

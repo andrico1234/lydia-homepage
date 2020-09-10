@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import 'typeface-lora';
+import "typeface-lora"
 import "./src/styles/layout.css"
 
 export const onClientEntry = async () => {

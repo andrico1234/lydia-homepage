@@ -8,12 +8,12 @@
   background: white;
   padding: 0 24px 1.45rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper {
   background-color: #ffb1bb;
 }
-
 
 @media (min-width: 600px) {
   .Layout {

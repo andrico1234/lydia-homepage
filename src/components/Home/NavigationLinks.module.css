@@ -18,8 +18,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  content: " ";
-  border: 1px solid #1D201F;
+  content: "";
+  border-top: 1px solid #1D201F;
   width: 0;
   opacity: 0;
   transition: width 0.3s ease-out, opacity 0.3s ease-out;

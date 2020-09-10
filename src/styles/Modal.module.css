@@ -1,19 +1,16 @@
-.UploadJourney__wrapper {
+.Modal__wrapper {
   position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 20000;
 }
 
-.UploadJourney {
-  background: white;
+.Modal {
   margin: auto;
   border: none;
-  padding: 16px;
-  border-radius: 2px;
   position: absolute;
   top: 50%;
   left: 50%;

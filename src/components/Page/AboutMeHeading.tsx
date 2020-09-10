@@ -35,8 +35,8 @@ export function AboutMeHeading(props: Props) {
         >
           <motion.h1
             layout
-            initial={{ fontSize: "min(9vw, 74px)" }}
-            animate={{ fontSize: "min(9vw, 37px)" }}
+            initial={{ fontSize: "min(10vw, 74px)" }}
+            animate={{ fontSize: "min(10vw, 39px)" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
               margin: 0,
