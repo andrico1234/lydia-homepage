@@ -1,5 +1,4 @@
 import React from "react"
-import instaLogo from "../images/insta-logo.png"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 

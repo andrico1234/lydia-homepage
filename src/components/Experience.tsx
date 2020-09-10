@@ -5,7 +5,7 @@ import { TeacherImage } from "./images/TeacherImage"
 import { useInView } from "react-intersection-observer"
 import { AnimatePresence, motion } from "framer-motion"
 
-export function ExperienceTwo() {
+export function Experience() {
   return (
     <div
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}

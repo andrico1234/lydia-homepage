@@ -1,5 +1,5 @@
 import React from "react"
-import imgTwoSrc from "../images/lydia-two.png"
+import imgTwoSrc from "../images/experience.jpg"
 import { PageLayout } from "../components/layouts/PageLayout"
 import { Experience } from "../components/Page/Experience"
 

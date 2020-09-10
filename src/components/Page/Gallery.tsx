@@ -134,7 +134,7 @@ function Image(props: ImageProps) {
       ref={ref}
       onClick={props.openModal}
       style={{
-        margin: "24px 16px",
+        padding: "8px",
       }}
     >
       <Img

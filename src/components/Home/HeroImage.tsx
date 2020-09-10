@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import imgOneSrc from "../../images/about.jpg"
-import imgTwoSrc from "../../images/lydia-two.png"
+import imgTwoSrc from "../../images/experience.jpg"
 import imgThreeSrc from "../../images/gallery.jpg"
 import styles from "./HeroImage.module.css"
 

@@ -1,20 +1,16 @@
 import React from "react"
-import SEO from "../components/seo"
 import { FadeInHeading } from "../components/FadeInHeading"
 import { Hero } from "../components/Home/Hero"
 import { Chevron } from "../components/Chevron"
-import { ExperienceTwo } from "../components/ExperienceTwo"
+import { Experience } from "../components/Experience"
 import { HomeLayout } from "../components/layouts/HomeLayout"
-import { UpcomingProject } from "../components/UpcomingProject"
 
 const IndexPage = () => (
   <HomeLayout>
     <FadeInHeading />
     <Hero />
     <Chevron />
-    <ExperienceTwo />
-
-    {/* link to instagram, get in touch */}
+    <Experience />
   </HomeLayout>
 )
 

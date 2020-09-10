@@ -17,8 +17,6 @@ const query = graphql`
 export function TeacherImage() {
   const { file } = useStaticQuery(query)
 
-  console.log("file", file)
-
   return (
     <div style={{ textAlign: "center" }}>
       <Img imgStyle={{ width: "100%" }} fluid={file.childImageSharp.fluid} />
