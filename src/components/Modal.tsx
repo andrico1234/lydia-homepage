@@ -12,9 +12,9 @@ interface Props {
 export function Modal(props: Props) {
   const { selectedImage, closeModal } = props
 
-  const html = document.querySelector("html")
-
   useEffect(() => {
+    const html = document.querySelector("html")
+
     selectedImage
       ? (html.style.overflow = "hidden")
       : (html.style.overflow = "visible")

@@ -14,7 +14,6 @@ export function AboutMePicture(props: Props) {
         textAlign: "center",
         maxWidth: "500px",
         margin: "24px auto",
-        overflow: "hidden",
       }}
     >
       <motion.img style={{ margin: 0, width: "100%" }} src={imgSrc} />
