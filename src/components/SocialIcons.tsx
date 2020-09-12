@@ -19,7 +19,7 @@ export function SocialIcons() {
 
   return (
     <div style={{ textAlign: "center", padding: "24px 0" }}>
-      <a href="https://instagram.com">
+      <a href="https://www.instagram.com/lydiamacx/">
         <Img imgStyle={{ width: "100%" }} fixed={file.childImageSharp.fixed} />
       </a>
     </div>
