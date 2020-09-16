@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Lydia MacKenzie`,
+    description: `Lydia is a professional dancer, choreographer, and fitness instructor
+    based in London.`,
+    author: `Andrico Karoulla`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

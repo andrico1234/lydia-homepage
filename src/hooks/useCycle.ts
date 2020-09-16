@@ -24,8 +24,6 @@ function useCycle<T>(vals: T[], defaultPosition: number) {
     setIndexOfCurrentValue(index)
   }
 
-  console.log(currentValue)
-
   return { currentValue, setNextValue, setValue }
 }
 
