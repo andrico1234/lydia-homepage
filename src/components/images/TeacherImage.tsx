@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 const query = graphql`
   query {
-    file(relativePath: { eq: "teacher.jpg" }) {
+    file(relativePath: { eq: "teacher-two.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 420) {
           ...GatsbyImageSharpFluid_noBase64

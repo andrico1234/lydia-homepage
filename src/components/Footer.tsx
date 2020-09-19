@@ -7,7 +7,10 @@ export function Footer() {
       <span role="img" aria-label="black-heart">
         🖤
       </span>{" "}
-      by <a href="https://andri.co">Andrico</a>
+      by{" "}
+      <a style={{ color: "black" }} href="https://andri.co">
+        Andrico
+      </a>
     </footer>
   )
 }

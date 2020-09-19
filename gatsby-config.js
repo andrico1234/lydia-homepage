@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Lydia MacKenzie`,
+    title: `Lydia MacKenzie | Dancer | Choreographer | Instructor`,
     description: `Lydia is a professional dancer, choreographer, and fitness instructor
     based in London.`,
     author: `Andrico Karoulla`,

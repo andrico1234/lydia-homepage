@@ -4,9 +4,9 @@ import Img from "gatsby-image"
 
 const query = graphql`
   query {
-    file(relativePath: { eq: "dance-artist-two.jpg" }) {
+    file(relativePath: { eq: "teacher.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 420) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -14,7 +14,7 @@ const query = graphql`
   }
 `
 
-export function DanceArtistImage() {
+export function TeacherMobileImage() {
   const { file } = useStaticQuery(query)
 
   return (
