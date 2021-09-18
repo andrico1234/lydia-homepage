@@ -4,13 +4,20 @@ import { Hero } from "../components/Home/Hero"
 import { Chevron } from "../components/Chevron"
 import { Experience } from "../components/Experience"
 import { HomeLayout } from "../components/layouts/HomeLayout"
+import { Testimonials } from "../components/Testimonials"
 
 const IndexPage = () => (
   <HomeLayout>
     <FadeInHeading />
     <Hero />
-    <Chevron />
+    <Chevron
+      style={{
+        textAlign: "center",
+        margin: "40px 16px",
+      }}
+    />
     <Experience />
+    <Testimonials />
   </HomeLayout>
 )
 

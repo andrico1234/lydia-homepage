@@ -1,0 +1,21 @@
+.SlideIndicator {
+  text-align: center;
+  padding: 32px;
+}
+
+.SlideIndicator button {
+  box-shadow: none;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 8px;
+  display: inline-block;
+  background-color: var(--pink-5);
+  transition: transform 0.2s ease-out;
+}
+
+.SlideIndicator_active {
+  transform: scale(1.6);
+}
