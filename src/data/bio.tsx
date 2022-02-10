@@ -58,10 +58,11 @@ const bio = [
       <p>
         In addition to performing Lydia has been teaching dance and fitness at
         studios and schools across London and offers private tuition upon
-        request. Lydia is passionate about offering the opportunity and skills
-        of dance to people of all ages and abilities, whether for recreation or
-        to strengthen a dancers technique and artistry. For more information on
-        her classes you can get in touch below.
+        request. She currently holds a Level 3 Mat Pilates qualifiation. Lydia
+        is passionate about offering the opportunity and skills of dance to
+        people of all ages and abilities, whether for recreation or to
+        strengthen a dancers technique and artistry. For more information on her
+        classes you can get in touch below.
       </p>
     ),
     id: "contact",

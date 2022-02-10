@@ -2,6 +2,7 @@ const experience = [
   {
     title: "Performing",
     items: [
+      "Movement Artist for Feature Film (being released December 2022)",
       "Romeo and Juliet, Bermuda Civic Ballet, Bermuda",
       "Task One, choreographed by Robert Bridger, Linbury Studio Royal Opera House",
       "Tilt, choreographed by Marc Brew, City of London Festival",
@@ -23,6 +24,7 @@ const experience = [
   {
     title: "Choregraphy",
     items: [
+      "Dancer/Choreographer for London Festival Opera at Middle Temple Hall",
       "Stack, Design for Dance, The Platform Theatre",
       "The Market Place, Central School of Ballet",
       "Eyes music video, Mukai and Becker",
