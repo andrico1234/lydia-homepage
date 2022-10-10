@@ -2,7 +2,7 @@ import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import useWindow from "../hooks/useWindow"
 import { useInView } from "react-intersection-observer"
-import styles from "./ExperienceBlock.module.css"
+import * as styles from "./ExperienceBlock.module.css"
 
 interface ExperienceBlockProps {
   title: string

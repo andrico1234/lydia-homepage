@@ -3,16 +3,17 @@ import imgThreeSrc from "../images/gallery.jpg"
 import { PageLayout } from "../components/layouts/PageLayout"
 import { Gallery } from "../components/Page/Gallery"
 import { graphql } from "gatsby"
-import { FluidObject } from "gatsby-image"
+import { GatsbyImageProps } from "gatsby-plugin-image"
 
 interface Props {
   data: {
     allFile: {
       edges: {
         node: {
+          name: string
           childImageSharp: {
-            thumbnail: FluidObject & { originalName: string }
-            full: FluidObject
+            thumbnail: GatsbyImageProps["image"]
+            full: GatsbyImageProps["image"]
           }
         }
       }[]
@@ -21,9 +22,10 @@ interface Props {
 }
 
 const GalleryPage = ({ data }: Props) => {
-  const images = data.allFile.edges.map(({ node }) => node.childImageSharp)
-  const sortedImages = images.sort((a, b) => {
-    if (a.thumbnail.originalName < b.thumbnail.originalName) {
+  const nodes = data.allFile.edges.map(({ node }) => node)
+
+  const sortedImages = nodes.sort((a, b) => {
+    if (a.name < b.name) {
       return -1
     }
 
@@ -44,14 +46,14 @@ export const query = graphql`
     allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
       edges {
         node {
+          name
           childImageSharp {
-            thumbnail: fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid_noBase64
-              originalName
-            }
-            full: fluid(maxWidth: 1024) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            thumbnail: gatsbyImageData(
+              layout: CONSTRAINED
+              width: 300
+              placeholder: TRACED_SVG
+            )
+            full: gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
         }
       }

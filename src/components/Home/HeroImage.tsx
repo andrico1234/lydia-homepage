@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import imgOneSrc from "../../images/about.jpg"
 import imgTwoSrc from "../../images/experience.jpg"
 import imgThreeSrc from "../../images/gallery.jpg"
-import styles from "./HeroImage.module.css"
+import * as styles from "./HeroImage.module.css"
 
 const images = [imgOneSrc, imgThreeSrc, imgTwoSrc]
 

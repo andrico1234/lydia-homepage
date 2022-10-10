@@ -1,6 +1,6 @@
 import React from "react"
 import { useRef } from "react"
-import styles from "./Indicator.module.css"
+import * as styles from "./Indicator.module.css"
 
 interface Props {
   itemCount: number
@@ -20,9 +20,10 @@ export function SlideIndicator(props: Props) {
           <button
             onClick={() => props.onClick(i)}
             onKeyDown={({ key }) => {
-              const childElements = containerRef.current.querySelectorAll(
-                "button"
-              )
+              if (!containerRef.current) return
+
+              const childElements =
+                containerRef.current.querySelectorAll("button")
               const elCount = childElements.length
 
               if (key === "ArrowLeft") {

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion"
-import styles from "../styles/Modal.module.css"
+import * as styles from "../styles/Modal.module.css"
 import { Loader } from "./Loader"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage, GatsbyImageProps } from "gatsby-plugin-image"
 
 interface Props {
-  selectedImage: FluidObject | null
+  selectedImage: GatsbyImageProps['image'] | null
   closeModal: () => void
 }
 
@@ -14,6 +14,8 @@ export function Modal(props: Props) {
 
   useEffect(() => {
     const html = document.querySelector("html")
+
+    if (!html) return
 
     selectedImage
       ? (html.style.overflow = "hidden")
@@ -45,13 +47,14 @@ export function Modal(props: Props) {
             >
               <div style={{ width: "100%", position: "relative" }}>
                 <Loader />
-                <Img
+                <GatsbyImage
                   style={{ margin: "1rem", maxHeight: "90vh" }}
                   imgStyle={{
                     width: "100%",
                     objectFit: "contain",
                   }}
-                  fluid={props.selectedImage}
+                  image={props.selectedImage}
+                  alt=""
                 />
               </div>
             </motion.div>

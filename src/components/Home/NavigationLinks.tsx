@@ -1,6 +1,6 @@
 import React from "react"
 import classnames from "classnames"
-import styles from "./NavigationLinks.module.css"
+import * as styles from "./NavigationLinks.module.css"
 import { motion, AnimatePresence } from "framer-motion"
 
 interface Props {

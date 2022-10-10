@@ -1,25 +1,15 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-
-const query = graphql`
-  query {
-    file(relativePath: { eq: "choreographer-two.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 420) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-  }
-`
+import { StaticImage } from "gatsby-plugin-image"
 
 export function ChoreographerImage() {
-  const { file } = useStaticQuery(query)
-
   return (
     <div style={{ textAlign: "center" }}>
-      <Img imgStyle={{ width: "100%" }} fluid={file.childImageSharp.fluid} />
+      <StaticImage
+        imgStyle={{ width: "100%" }}
+        style={{ maxWidth: 420 }}
+        src="../../images/choreographer-two.jpg"
+        alt="choreographer"
+      />
     </div>
   )
 }

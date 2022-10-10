@@ -1,6 +1,6 @@
 import React from "react"
 import { Footer } from "../Footer"
-import styles from "./layout.module.css"
+import * as styles from "./layout.module.css"
 import { UpcomingProject } from "../UpcomingProject"
 import SEO from "../seo"
 import { SocialIcons } from "../SocialIcons"

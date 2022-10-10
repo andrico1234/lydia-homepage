@@ -1,14 +1,17 @@
 import React, { useMemo, useState } from "react"
 import { motion } from "framer-motion"
 import { containerVariants } from "../../animations/variants"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage, GatsbyImageProps, getImage } from "gatsby-plugin-image"
 import useWindow from "../../hooks/useWindow"
 import { useInView } from "react-intersection-observer"
 import { Modal } from "../Modal"
 
 interface Image {
-  thumbnail: FluidObject
-  full: FluidObject
+  name: string
+  childImageSharp: {
+    thumbnail: GatsbyImageProps["image"]
+    full: GatsbyImageProps["image"]
+  }
 }
 
 interface Props {
@@ -47,7 +50,8 @@ export function Gallery(props: Props) {
   const { width } = useWindow()
   const [selectedImage, setSelectedImage] = useState(-1)
   const { images } = props
-  const imageList = useMemo(() => images.map(({ full }) => full.src), [images])
+
+  const imageList = images.map(({ name }) => name)
 
   const galleryColumns = getGalleryColumns(width)
 
@@ -59,8 +63,8 @@ export function Gallery(props: Props) {
   return (
     <>
       <Modal
-        selectedImage={images[selectedImage]?.full ?? null}
-        closeModal={() => setSelectedImage(null)}
+        selectedImage={images[selectedImage]?.childImageSharp?.full ?? null}
+        closeModal={() => setSelectedImage(-1)}
       />
       <ImageGallery
         imageList={imageList}
@@ -101,9 +105,9 @@ function ImageGallery(props: GalleryProps) {
               return (
                 <Image
                   key={j}
-                  thumbnail={image.thumbnail}
+                  thumbnail={image.childImageSharp.full}
                   column={i}
-                  openModal={() => openModal(image.full.src)}
+                  openModal={() => openModal(image.name)}
                 />
               )
             })}
@@ -115,13 +119,15 @@ function ImageGallery(props: GalleryProps) {
 }
 
 interface ImageProps {
-  thumbnail: FluidObject
+  thumbnail: GatsbyImageProps["image"]
   column: number
   openModal: () => void
 }
 
 function Image(props: ImageProps) {
   const threshold = 0.5 + 0.15 * props.column
+
+  const image = getImage(props.thumbnail)
 
   const [ref, inView] = useInView({
     threshold,
@@ -137,14 +143,15 @@ function Image(props: ImageProps) {
         padding: "8px",
       }}
     >
-      <Img
+      <GatsbyImage
         imgStyle={{
           width: "100%",
           opacity: inView ? 1 : 0,
           cursor: "pointer",
           transition: "opacity 0.3s ease-out",
         }}
-        fluid={props.thumbnail}
+        image={image!}
+        alt="aasa"
       />
     </motion.div>
   )
