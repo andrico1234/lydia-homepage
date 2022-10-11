@@ -7,21 +7,16 @@ import * as styles from "./ExperienceBlock.module.css"
 interface ExperienceBlockProps {
   title: string
   img: React.ReactNode
-  mobileImg: React.ReactNode
   description: React.ReactNode
   reverse?: boolean
 }
 
 export function ExperienceBlock(props: ExperienceBlockProps) {
-  const { title, description, img, reverse, mobileImg } = props
+  const { title, description, img, reverse } = props
   const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   })
-
-  const { width } = useWindow()
-
-  const isMobile = width < 720
 
   return (
     <div ref={ref} className={styles.ExperienceBlock}>
@@ -38,9 +33,7 @@ export function ExperienceBlock(props: ExperienceBlockProps) {
               <h2>{title}</h2>
               {description}
             </div>
-            <div className={styles.ExperienceBlock__imageWrapper}>
-              {isMobile ? mobileImg : img}
-            </div>
+            <div className={styles.ExperienceBlock__imageWrapper}>{img}</div>
           </motion.div>
         )}
       </AnimatePresence>

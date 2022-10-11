@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import imgOneSrc from "../../images/about.jpg"
 import imgTwoSrc from "../../images/experience.jpg"
 import imgThreeSrc from "../../images/gallery.jpg"
+import imgFourSrc from "../../images/blog.jpg"
 import * as styles from "./HeroImage.module.css"
 
-const images = [imgOneSrc, imgThreeSrc, imgTwoSrc]
+const images = [imgOneSrc, imgFourSrc, imgThreeSrc, imgTwoSrc]
 
 const variants = {
   enter: {

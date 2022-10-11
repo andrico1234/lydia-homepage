@@ -1,5 +1,6 @@
 .NavigationLinks {
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 500px;
   user-select: none;
@@ -31,5 +32,5 @@
 
 .link {
   text-decoration: none;
-  color: #1D201F;
+  color: #1d201f;
 }

@@ -4,7 +4,7 @@ import { HeroImage } from "./HeroImage"
 import { navigate } from "gatsby"
 import useCycle from "../../hooks/useCycle"
 
-const links: string[] = ["about", "gallery", "experience"]
+const links: string[] = ["about", "blog", "gallery", "experience"]
 
 export function Hero() {
   const initialId = links.indexOf("gallery")

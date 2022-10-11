@@ -33,7 +33,7 @@ module.exports = {
       resolve: "gatsby-source-graphql",
       options: {
         typeName: "HYGRAPH",
-        fieldName: "hygraphData",
+        fieldName: "allHygraphData",
         url: "https://api-eu-west-2.hygraph.com/v2/cl92y59e33csv01t6h5os25en/master",
       },
     },

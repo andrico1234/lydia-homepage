@@ -6,8 +6,8 @@ export function TeacherImage() {
     <div style={{ textAlign: "center" }}>
       <StaticImage
         imgStyle={{ width: "100%" }}
-        src="../../images/teacher-two.jpg"
-        style={{ maxWidth: "420" }}
+        src="../../images/teacher.jpg"
+        style={{ maxWidth: 600 }}
         alt="teacher"
       />
     </div>

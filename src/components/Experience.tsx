@@ -1,11 +1,8 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { ChoreographerImage } from "./images/ChoregrapherImage"
-import { ChoreographerMobileImage } from "./images/ChoregrapherMobileImage"
 import { DanceArtistImage } from "./images/DanceArtistImage"
-import { DanceArtistMobileImage } from "./images/DanceArtistMobileImage"
 import { TeacherImage } from "./images/TeacherImage"
-import { TeacherMobileImage } from "./images/TeacherMobileImage"
 import { ExperienceBlock } from "./ExperienceBlock"
 
 async function directToGallery() {
@@ -24,7 +21,6 @@ export function Experience() {
       <ExperienceBlock
         title="Dance Artist"
         img={<DanceArtistImage />}
-        mobileImg={<DanceArtistMobileImage />}
         description={
           <p>
             As a professional dance artist in the Classical and Contemporary
@@ -43,7 +39,6 @@ export function Experience() {
       <ExperienceBlock
         title="Teacher"
         img={<TeacherImage />}
-        mobileImg={<TeacherMobileImage />}
         reverse
         description={
           <>
@@ -65,7 +60,6 @@ export function Experience() {
       <ExperienceBlock
         title="Choreographer"
         img={<ChoreographerImage />}
-        mobileImg={<ChoreographerMobileImage />}
         description={
           <p>
             Lydia has choreographed many works, both small and large scale. Her

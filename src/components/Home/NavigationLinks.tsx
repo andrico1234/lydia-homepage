@@ -21,15 +21,12 @@ export function NavigationLinks(props: Props) {
       >
         {!isFadingOut && (
           <motion.div className={styles.NavigationLinks}>
-            {links.map((link, i) => {
+            {links.map(link => {
               return (
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  style={{
-                    flex: i === 1 ? 1 : 0,
-                  }}
                   transition={{ duration: 0.3 }}
                   onClick={() => onClickLink(link)}
                   key={link}

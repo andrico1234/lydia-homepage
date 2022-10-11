@@ -1,7 +1,21 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = async function ({ actions, graphql }) {
+  const { data } = await graphql(`
+    query {
+      allHygraphData {
+        posts {
+          id
+          slug
+        }
+      }
+    }
+  `)
 
-// You can delete this file if you're not using it
+  data.allHygraphData.posts.forEach(post => {
+    const { slug, id } = post
+    actions.createPage({
+      path: slug,
+      component: require.resolve(`./src/templates/post.tsx`),
+      context: { slug: slug, id: id },
+    })
+  })
+}

@@ -6,8 +6,8 @@ export function ChoreographerImage() {
     <div style={{ textAlign: "center" }}>
       <StaticImage
         imgStyle={{ width: "100%" }}
-        style={{ maxWidth: 420 }}
-        src="../../images/choreographer-two.jpg"
+        style={{ maxWidth: 600 }}
+        src="../../images/choreographer.jpg"
         alt="choreographer"
       />
     </div>
