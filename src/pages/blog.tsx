@@ -26,12 +26,8 @@ export const query = graphql`
   {
     allHygraphData {
       posts {
-        id
         title
         slug
-        content {
-          markdown
-        }
       }
     }
   }

@@ -13,7 +13,7 @@ exports.createPages = async function ({ actions, graphql }) {
   data.allHygraphData.posts.forEach(post => {
     const { slug, id } = post
     actions.createPage({
-      path: slug,
+      path: `/blog/${slug}`,
       component: require.resolve(`./src/templates/post.tsx`),
       context: { slug: slug, id: id },
     })

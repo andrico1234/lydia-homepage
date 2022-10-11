@@ -38,11 +38,6 @@ export function AboutMeHeading(props: Props) {
             initial={{ fontSize: "min(10vw, 74px)" }}
             animate={{ fontSize: "min(10vw, 39px)" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            style={{
-              margin: 0,
-              fontWeight: "lighter",
-              whiteSpace: "nowrap",
-            }}
           >
             Lydia MacKenzie
           </motion.h1>
