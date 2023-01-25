@@ -51,9 +51,8 @@ export const query = graphql`
             thumbnail: gatsbyImageData(
               layout: CONSTRAINED
               width: 300
-              placeholder: TRACED_SVG
             )
-            full: gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
+            full: gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
