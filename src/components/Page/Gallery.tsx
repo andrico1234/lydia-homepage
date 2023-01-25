@@ -31,19 +31,24 @@ function getGalleryColumns(width: number) {
 }
 
 function generateImageColumns(images: Image[], columnCount: number): Image[][] {
-  const imageColumns = images.reduce((acc, curr, i) => {
-    const columnToAddImageTo = i % columnCount
+  const columnHeights = Array(columnCount).fill(0)
+  const columns: Image[][] = [...Array(columnCount)].map(() => [])
 
-    if (!acc[columnToAddImageTo]) {
-      acc[columnToAddImageTo] = []
-    }
+  images.map(image => {
+    const smallestHeight = Math.min(...columnHeights)
+    const indexOfSmallesHeight = columnHeights.indexOf(
+      Math.min(...columnHeights)
+    )
 
-    acc[columnToAddImageTo].push(curr)
+    const smallestColumn = columns[indexOfSmallesHeight]
+    smallestColumn.push(image)
 
-    return acc
-  }, [])
+    const { height } = image.childImageSharp.thumbnail
 
-  return imageColumns
+    columnHeights[indexOfSmallesHeight] = smallestHeight + height
+  })
+
+  return columns
 }
 
 export function Gallery(props: Props) {
